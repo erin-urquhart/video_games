@@ -10,11 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_02_11_043220) do
+ActiveRecord::Schema[7.0].define(version: 2022_02_11_082724) do
   create_table "employees", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "game_genres", force: :cascade do |t|
+    t.string "name"
+    t.integer "game_id", null: false
+    t.integer "genre_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_game_genres_on_game_id"
+    t.index ["genre_id"], name: "index_game_genres_on_genre_id"
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.string "name"
+    t.integer "release_year"
+    t.string "description"
+    t.string "publisher"
+    t.integer "employee_id", null: false
+    t.integer "platform_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["employee_id"], name: "index_games_on_employee_id"
+    t.index ["platform_id"], name: "index_games_on_platform_id"
   end
 
   create_table "genres", force: :cascade do |t|
@@ -30,29 +53,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_11_043220) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "video_game_genres", force: :cascade do |t|
-    t.string "name"
-    t.integer "videogame_id", null: false
-    t.integer "genre_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["genre_id"], name: "index_video_game_genres_on_genre_id"
-    t.index ["videogame_id"], name: "index_video_game_genres_on_videogame_id"
-  end
-
-  create_table "video_games", force: :cascade do |t|
-    t.string "name"
-    t.integer "release_year"
-    t.integer "employee_id", null: false
-    t.integer "platform_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["employee_id"], name: "index_video_games_on_employee_id"
-    t.index ["platform_id"], name: "index_video_games_on_platform_id"
-  end
-
-  add_foreign_key "video_game_genres", "genres"
-  add_foreign_key "video_game_genres", "videogames"
-  add_foreign_key "video_games", "employees"
-  add_foreign_key "video_games", "platforms"
+  add_foreign_key "games", "employees"
+  add_foreign_key "games", "platforms"
 end

@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  release_year: 1
+  description: MyString
+  publisher: MyString
+  employee: one
+  platform: one
+
+two:
+  name: MyString
+  release_year: 1
+  description: MyString
+  publisher: MyString
+  employee: two
+  platform: two
