@@ -43,7 +43,7 @@ games.each do |game|
     v = platform.games.create(
       name: game["Name"],
       release_year: game["ReleaseYear"],
-      description: game["Description"],
+      description: game["Overview"],
       publisher: game["Publisher"],
       employee_id: employees.id
     )
