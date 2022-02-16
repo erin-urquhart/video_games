@@ -1,2 +1,11 @@
-<h1>Employees#show</h1>
-<p>Find me in app/views/employees/show.html.erb</p>
+<h2 class="title is-2"><%= @employee.name%></h2>
+<p>
+  Favourite games: <% Game.where("employee_id = ?", params[@employee.id])%>
+</p>
+<ul>
+  <% @employee.games.each do |game|%>
+    <li>
+      <%= link_to game.name, game%>
+    </li>
+  <% end %>
+</ul>

@@ -1,2 +1,15 @@
-<h1><%= @game.name%></h1>
-<p>Find me in app/views/games/show.html.erb</p>
+<h2 class="title is-2"><%= @game.name%></h2>
+<p>
+  <strong>Release Year: </strong>
+  <p><%= @game.release_year%></p>
+</p>
+
+<p>
+  <strong>Publisher: </strong>
+  <p><%= @game.publisher%></p>
+</p>
+
+<p>
+  <strong>Description: </strong>
+  <p><%= @game.description%></p>
+</p>
