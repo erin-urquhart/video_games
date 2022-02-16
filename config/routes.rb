@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   #get 'games/index'
   #get 'games/show'
+  root to: 'pages#home'
   resources :games, only: [:index, :show]
   resources :platforms, only: [:index, :show]
   resources :genres, only: [:index, :show]
