@@ -1,6 +1,11 @@
-<h1 class="title is-3">List of Platforms</h1>
-<ul class="ml-15">
-  <% @platforms.each do |platform|%>
-    <li><%= link_to platform.name, platform %></li>
-  <% end %>
-</ul>
+<div class="header">
+  <h1 class="title is-3">List of Platforms</h1>
+</div>
+
+<div class="results">
+  <ul class="columns is-multiline mt-5">
+    <% @platforms.each do |platform|%>
+      <li class="column box is-one-quarter has-background-primary-light m-5"><%= link_to platform.name, platform %></li>
+    <% end %>
+  </ul>
+</div>
