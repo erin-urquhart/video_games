@@ -22,10 +22,12 @@
   </p>
   <p>
     These two datasets are connected by the platform the game runs on, and it already has a Platform column in its dataset so I will be using that column to find the related platform in the other table.
+    This relationship will be a one to many relationship, with platforms having many games but the game can only be on one platform.
     I will also use the Genres row to build another table called Genres. Since a game can have multiple genres, it will be a many to many table so it will have a joining table called GameGenres.
   </p>
   <p>
-    And finally I will be making an Employee table using Faker to generate names. This will be connected to the Games table as the employee’s favourite video game.
+    And finally I will be making an Employee table using Faker to generate names. This will be connected to the Games table as the employee’s favourite video game. This will be a one to many relationship with one employee having many
+    favourite video games but games only having one employee.
   </p>
   <%= image_tag "schema.png", alt:"schema img"%>
 </div>
