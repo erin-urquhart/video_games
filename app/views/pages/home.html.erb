@@ -1,1 +1,31 @@
-<p>Home</p>
+<div class="content box m-4">
+  <h2>About This Data</h2>
+  <p>
+  Games.csv is one dataset I will be using. It’s a list of basically every video game but I will be reducing it down since 80k rows is way too much.
+  The data is structured like:
+  </p>
+  <p class="is-size-5">
+    Name, ReleaseDate, ReleaseYear, Developer, Platform, Genres, Publishers, MaxPlayers, ESRB, Overview, Cooperative
+  </p>
+  <p>
+    I will be using Name, ReleaseYear, Publisher, and Overview.
+  </p>
+  <p>
+    The other related dataset I will be using is platforms.csv which contains all of the game platforms and their information.
+    The data is structured like:
+  </p>
+  <p class="is-size-5">
+    Name, Emulated, ReleaseDate, Developer, Manufacturer, Cpu, Memory, Graphics, Sound, Display, Media, MaxControllers, Notes, Category
+  </p>
+  <p>
+    I will be using Name and ReleaseDate from this data.
+  </p>
+  <p>
+    These two datasets are connected by the platform the game runs on, and it already has a Platform column in its dataset so I will be using that column to find the related platform in the other table.
+    I will also use the Genres row to build another table called Genres. Since a game can have multiple genres, it will be a many to many table so it will have a joining table called GameGenres.
+  </p>
+  <p>
+    And finally I will be making an Employee table using Faker to generate names. This will be connected to the Games table as the employee’s favourite video game.
+  </p>
+  <%= image_tag "schema.png"%>
+</div>

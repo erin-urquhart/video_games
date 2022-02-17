@@ -13,6 +13,14 @@
  *= require_tree .
  *= require_self
  */
+ html{
+   background-color: blanchedalmond;
+ }
+
+.content{
+  margin: auto;
+}
+
  .navbar a{
    color: azure;
    margin-left: 30px;
@@ -24,11 +32,15 @@
  }
 
  .results{
-   padding: 10px;
-   margin-top: 30px;
-   margin-bottom: 30px;
+   width: 80%;
+   margin: auto;
  }
 
  .input{
    width: 200px;
+ }
+
+ .searchbar{
+   width: 80%;
+   margin: auto;
  }
