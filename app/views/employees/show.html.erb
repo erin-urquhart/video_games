@@ -1,11 +1,14 @@
-<h2 class="title is-2"><%= @employee.name%></h2>
-<p>
+<h2 class="title is-2 m-2 py-4"><%= @employee.name%></h2>
+<p class="title is-5 m-2">
   Favourite games: <% Game.where("employee_id = ?", params[@employee.id])%>
 </p>
-<ul>
-  <% @employee.games.each do |game|%>
-    <li>
-      <%= link_to game.name, game%>
-    </li>
-  <% end %>
-</ul>
+<div class="results">
+  <ul class="columns is-multiline mt-5">
+    <% @employee.games.each do |game|%>
+      <li class="column box is-one-quarter has-background-primary-light m-5">
+        <%= link_to game.name, game%>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
