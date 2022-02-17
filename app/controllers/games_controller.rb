@@ -1,12 +1,13 @@
 require 'kaminari'
 class GamesController < ApplicationController
   def index
-    @games = Game.includes(:platform, :genres).search(params[:search]).order("name")
+    @games = Game.includes(:platform, :employee).search(params[:search]).order("name")
     @games = Kaminari.paginate_array(@games).page(params[:page]).per(10)
   end
 
   def show
-    @game = Game.find(params[:id])
+    @game = Game.includes(:genres).find(params[:id])
+    @gamegenres = Genre.select('games.id, genres.id, genres.name').joins(:games).where('game_id = ?', "#{@game.id}")
   end
 
   def game_params
