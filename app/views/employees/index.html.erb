@@ -1,6 +1,11 @@
-<h1 class="title is-3">Employees</h1>
-<ul class="ml-15">
-  <% @employees.each do |employee|%>
-    <li><%= link_to employee.name, employee %></li>
-  <% end %>
-</ul>
+<div class="header">
+  <h1 class="title is-3 m-2 py-4">Employees</h1>
+</div>
+
+<div class="results">
+  <ul class="columns is-multiline mt-5">
+    <% @employees.each do |employee|%>
+      <li class="column box is-one-quarter has-background-primary-light m-5"><%= link_to employee.name, employee %></li>
+    <% end %>
+  </ul>
+</div>

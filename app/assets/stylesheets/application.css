@@ -40,7 +40,7 @@
    width: 200px;
  }
 
- .searchbar{
+ .searchbar, .header{
    width: 80%;
    margin: auto;
  }
