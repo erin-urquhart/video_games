@@ -2,7 +2,7 @@ require 'kaminari'
 class GamesController < ApplicationController
   def index
     @games = Game.includes(:platform, :genres).search(params[:search]).order("name")
-    @games = Kaminari.paginate_array(@games).page(params[:page]).per(20)
+    @games = Kaminari.paginate_array(@games).page(params[:page]).per(10)
   end
 
   def show

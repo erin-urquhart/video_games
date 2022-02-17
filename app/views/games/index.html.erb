@@ -1,14 +1,20 @@
-<h1 class="title is-3">List of Video Games</h1>
-<h4>Search Games by Name:</h4>
+<h1 class="title is-3 m-2 py-4">List of Video Games</h1>
+<h4 class="title is-5 m-2">Search Games by Name:</h4>
   <%= form_tag(games_path, method: :get) do %>
-    <%= text_field_tag(:search, params[:search]) %>
-    <%# <%= select_tag :genre, options_from_collection_for_select(@genre, 'id', 'name') %> %>
-    <%= submit_tag ("Search") %>
+    <%= text_field_tag(:search, params[:search], class:"input is-normal is-info ml-2") %>
+    <%# <%= select_tag :genre, options_from_collection_for_select(@genre, 'id', 'name') %>
+    <%= submit_tag ("Search"), class:"button is-dark" %>
   <% end %>
 
-<ul class="ml-15">
+<ul class="columns is-multiline is-flex mt-5">
   <% @games.each do |game|%>
-    <li><%= link_to game.name, game %> was published on <%= link_to game.platform.name%></li>
+    <div class="column box is-one-quarter has-background-primary-light m-5">
+      <li class="has-background-danger-light p-5 is-size-4"><%= link_to game.name, game %></li>
+      <li class="p-5 "><%= link_to game.platform.name%></li>
+    </div>
   <% end %>
 </ul>
-<%= paginate @games %>
+<div class="m-2 pt-1">
+  <%= paginate @games %>
+</div>
+
