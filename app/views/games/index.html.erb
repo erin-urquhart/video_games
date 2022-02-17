@@ -2,6 +2,7 @@
 <h4>Search Games by Name:</h4>
   <%= form_tag(games_path, method: :get) do %>
     <%= text_field_tag(:search, params[:search]) %>
+    <%# <%= select_tag :genre, options_from_collection_for_select(@genre, 'id', 'name') %> %>
     <%= submit_tag ("Search") %>
   <% end %>
 

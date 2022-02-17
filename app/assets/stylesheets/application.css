@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+ .navbar a{
+   color: azure;
+   margin-left: 30px;
+   font-size: 20px;
+ }
+
+ .navbar img{
+   width: 40px;
+ }
