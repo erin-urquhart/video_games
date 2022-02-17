@@ -3,9 +3,9 @@
 </div>
 
 <div class="results">
-  <ul class="columns is-multiline mt-5">
+  <div class="columns is-multiline mt-5">
     <% @employees.each do |employee|%>
-      <li class="column box is-one-quarter has-background-primary-light m-5"><%= link_to employee.name, employee %></li>
+      <div class="column box is-one-quarter has-background-primary-light m-5"><%= link_to employee.name, employee %></div>
     <% end %>
-  </ul>
+  </div>
 </div>

@@ -1,28 +1,28 @@
 <div class="header">
 <h2 class="title is-2"><%= @game.name%></h2>
-<p>
+<p class="mt-3">
   <strong>Release Year: </strong>
   <p><%= @game.release_year%></p>
 </p>
 
-<p>
+<p class="mt-3">
   <strong>Publisher: </strong>
   <p><%= @game.publisher%></p>
 </p>
 
-<p>
+<p class="mt-3">
   <strong>Genres: </strong>
     <% @gamegenres.each do |genre|%>
       <p><%= genre.name %></p>
     <% end %>
 </p>
 
-<p>
+<p class="mt-3">
 <strong>Favourite Game: </strong>
   <p><%= @game.employee.name%></p>
 </p>
 
-<p>
+<p class="mt-3">
   <strong>Description: </strong>
   <p><%= @game.description%></p>
 </p>

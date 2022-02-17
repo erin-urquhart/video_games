@@ -9,14 +9,14 @@
 </div>
 
 <div class="results">
-  <ul class="columns is-multiline mt-5">
+  <div class="columns is-multiline mt-5">
   <% @games.each do |game|%>
     <div class="column box is-one-quarter has-background-primary-light m-5">
-      <li class="has-background-danger-light p-5 is-size-4"><%= link_to game.name, game %></li>
-      <li class="p-5 "><%= link_to game.platform.name, game%></li>
+      <div class="has-background-danger-light p-5 is-size-4"><%= link_to game.name, game %></div>
+      <div class="p-5 "><%= link_to game.platform.name, game%></div>
     </div>
   <% end %>
-  </ul>
+  </div>
 </div>
 
 <div class="m-2 pt-1">

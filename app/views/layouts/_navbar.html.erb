@@ -2,7 +2,7 @@
   <nav class="navbar is-dark is-spaced" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item">
-        <%= image_tag "icon.png"%>
+        <%= image_tag "icon.png", alt: "menu icon"%>
       </a>
     </div>
     <div id="navbar" class="navbar-menu">
@@ -12,6 +12,7 @@
         <%= link_to "Genres", genres_path, class: "navbar-item"%>
         <%= link_to "Employees", employees_path, class: "navbar-item"%>
         <%= link_to "Platforms", platforms_path, class: "navbar-item"%>
+      </div>
     </div>
   </nav>
 </header>
